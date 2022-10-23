@@ -1,2 +1,2 @@
-# technobot
+# TechnoBot
 A Technoblade Discord bot
