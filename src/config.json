@@ -1,0 +1,18 @@
+{
+    "embeds": {
+        "default": "#E15C5C",
+        "error": "#E74C3C"
+    },
+
+    "emojis": {
+        "error": ":x:",
+        "information": ":information_source:",
+        "pingpong": ":ping_pong:"
+    },
+
+    "presence": {
+        "activity": "Remembering Technoblade",
+        "activityType": "Playing",
+        "status": "ONLINE"
+    }
+}

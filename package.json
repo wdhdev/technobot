@@ -1,0 +1,15 @@
+{
+  "name": "technobot",
+  "version": "1.0.0",
+  "description": "A Discord bot made in honour of Technoblade.",
+  "main": "src/index.js",
+  "scripts": {
+    "register": "node src/scripts/registercommands.js"
+  },
+  "author": "William Harrison",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3"
+  }
+}
