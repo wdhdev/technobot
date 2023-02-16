@@ -1,7 +1,7 @@
 # TechnoBot
-A Technoblade Discord bot
+A Discord bot made in honour of Technoblade.
 
-![Languages](https://skillicons.dev/icons?i=js,nodejs)
+![Languages](https://skillicons.dev/icons?i=nodejs)
 
-## Invite
+# Invite
 https://wdh.gg/technobot
