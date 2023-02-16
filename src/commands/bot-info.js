@@ -56,7 +56,15 @@ module.exports = {
                     { name: "Users", value: `\`${client.users.cache.size}\`` }
                 )
 
-            await interaction.editReply({ embeds: [info] });
+            const githubBtn = new Discord.ActionRowBuilder()
+                .addComponents (
+                    new Discord.ButtonBuilder()
+                        .setStyle(Discord.ButtonStyle.Link)
+                        .setLabel("GitHub")
+                        .setURL("https://github.com/williamdavidharrison/technobot")
+                )
+
+            await interaction.editReply({ embeds: [info], components: [githubBtn] });
         } catch(err) {
             client.logCommandError(interaction, Discord);
         }
