@@ -61,7 +61,7 @@ module.exports = {
                     new Discord.ButtonBuilder()
                         .setStyle(Discord.ButtonStyle.Link)
                         .setLabel("GitHub")
-                        .setURL("https://github.com/williamdavidharrison/technobot")
+                        .setURL("https://wdh.gg/technobot-github")
                 )
 
             await interaction.editReply({ embeds: [info], components: [githubBtn] });
