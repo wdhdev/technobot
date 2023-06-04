@@ -52,29 +52,6 @@ module.exports = {
                 }
             }
 
-            if(command.userPermissions.length) {
-                const invalidPerms = [];
-
-                for(const perm of command.userPermissions) {
-                    if(!validPermissions.includes(perm)) {
-                        return;
-                    }
-
-                    if(!interaction.member?.permissions.has(perm)) {
-                        invalidPerms.push(perm);
-                    }
-                }
-
-                if(invalidPerms.length) {
-                    const permError = new Discord.EmbedBuilder()
-                        .setColor(client.config_embeds.error)
-                        .setDescription(`${emoji.error} You do not have permission to perform this command!`)
-
-                    await interaction.editReply({ embeds: [permError] });
-                    return;
-                }
-            }
-
             if(!cooldowns.has(command.name)) {
                 cooldowns.set(command.name, new Discord.Collection());
             }

@@ -2,7 +2,6 @@ module.exports = {
     name: "quote",
     description: "Sends a random Technoblade quote",
     options: [],
-    userPermissions: [],
     botPermissions: [],
     cooldown: 3,
     enabled: true,
@@ -134,7 +133,7 @@ module.exports = {
 
             await interaction.editReply({ embeds: [technobladeQuote] });
         } catch(err) {
-            client.logCommandError(interaction, Discord);
+            client.logCommandError(err, interaction, Discord);
         }
     }
 }

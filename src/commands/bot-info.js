@@ -4,13 +4,14 @@ module.exports = {
     name: "bot-info",
     description: "Get information about the bot",
     options: [],
-    userPermissions: [],
     botPermissions: [],
     cooldown: 5,
     enabled: true,
     async execute(interaction, client, Discord) {
         try {
+            // Uptime
             let totalSeconds = (client.uptime / 1000);
+
             let days = Math.floor(totalSeconds / 86400);
             totalSeconds %= 86400; 
             let hours = Math.floor(totalSeconds / 3600);
@@ -18,26 +19,10 @@ module.exports = {
             let minutes = Math.floor(totalSeconds / 60);
             let seconds = Math.floor(totalSeconds % 60);
 
-            let uptime_days = `\`${days}\` days`;
-            let uptime_hours = `\`${hours}\` hours`;
-            let uptime_minutes = `\`${minutes}\` minutes`;
-            let uptime_seconds = `\`${seconds}\` seconds`;
-
-            if(days === 1) {
-                uptime_days = `\`${days}\` day`;
-            }
-
-            if(hours === 1) {
-                uptime_hours = `\`${hours}\` hour`;
-            }
-
-            if(minutes === 1) {
-                uptime_minutes = `\`${minutes}\` minute`;
-            }
-
-            if(seconds === 1) {
-                uptime_seconds = `\`${seconds}\` second`;
-            }
+            let uptime_days = days === 1 ? `${days} day` : `${days} days`;
+            let uptime_hours = hours === 1 ? `${hours} hour` : `${hours} hours`;
+            let uptime_minutes = minutes === 1 ? `${minutes} minute` : `${minutes} minutes`;
+            let uptime_seconds = seconds === 1 ? `${seconds} second` : `${seconds} seconds`;
 
             let uptime = `${uptime_days}, ${uptime_hours}, ${uptime_minutes}, ${uptime_seconds}`;
 
@@ -47,7 +32,7 @@ module.exports = {
                 .setThumbnail(client.user.displayAvatarURL({ format: "png", dynamic: true }))
                 .setTitle("Bot Information")
                 .addFields (
-                    { name: "Name", value: client.user.username },
+                    { name: "Username", value: client.user.username },
                     { name: "ID", value: `\`${client.user.id}\`` },
                     { name: "Version", value: `\`${bot.version}\`` },
                     { name: "Developer", value: bot.author },
@@ -66,7 +51,7 @@ module.exports = {
 
             await interaction.editReply({ embeds: [info], components: [githubBtn] });
         } catch(err) {
-            client.logCommandError(interaction, Discord);
+            client.logCommandError(err, interaction, Discord);
         }
     }
 }

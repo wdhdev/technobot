@@ -1,3 +1,12 @@
+const Sentry = require("@sentry/node");
+
+require("dotenv").config();
+
+Sentry.init({
+    dsn: process.env.sentry_dsn,
+    tracesSampleRate: 1.0
+})
+
 const config = require("./config.json");
 
 const Discord = require("discord.js");
@@ -10,22 +19,25 @@ const client = new Discord.Client({
                 type: config.presence.activityType,
             }
         ],
-
         status: config.presence.status
     }
 })
 
-// Debug
-client.on("debug", info => {
-    console.log(`[Debug] ${info}`);
+// Error Handling
+client.on("error", (err) => {
+    Sentry.captureException(err);
+    console.error(err);
 })
 
-// Error Handling
-client.on("error", () => console.error);
-client.on("warn", () => console.warn);
-process.on("unhandledRejection", console.error);
+client.on("warn", (warn) => {
+    Sentry.captureMessage(warn);
+    console.warn(warn);
+})
 
-require("dotenv").config();
+process.on("unhandledRejection", (err) => {
+    Sentry.captureException(err);
+    console.error(err);
+})
 
 // Configs
 client.config_embeds = config.embeds;
@@ -44,6 +56,8 @@ client.events = new Discord.Collection();
 client.login(process.env.token);
 
 // Global
+client.sentry = Sentry;
+
 client.validPermissions = [
     "CreateInstantInvite",
     "KickMembers",
@@ -85,5 +99,8 @@ client.validPermissions = [
     "UseExternalStickers",
     "SendMessagesInThreads",
     "UseEmbeddedActivities",
-    "ModerateMembers"
+    "ModerateMembers",
+    "ViewCreatorMonetizationAnalytics",
+    "UseSoundboard",
+    "SendVoiceMessages"
 ]

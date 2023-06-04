@@ -3,14 +3,11 @@ module.exports = (client, Discord) => {
 
     loadEvents(client, Discord);
 
-    const emoji = require("../config.json").emojis;
+    const Sentry = require("@sentry/node");
 
-    client.logEventError = async function(interaction, Discord) {
-        const error = new Discord.EmbedBuilder()
-            .setColor(client.config_embeds.error)
-            .setDescription(`${emoji.error} There was an error while executing that command!`)
-
-        await interaction.editReply({ embeds: [error] });
+    client.logEventError = async function(err) {
+        Sentry.captureException(err);
+        console.error(err);
     }
 
     require("dotenv").config();

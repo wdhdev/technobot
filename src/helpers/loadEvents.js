@@ -23,5 +23,8 @@ try {
         ["client", "guild"].forEach(e => loadDir(e));
     }
 } catch(err) {
-    console.log(err);
+    const Sentry = require("@sentry/node");
+
+    Sentry.captureException(err);
+    console.error(err);
 }

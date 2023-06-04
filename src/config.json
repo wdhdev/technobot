@@ -6,13 +6,12 @@
 
     "emojis": {
         "error": ":x:",
-        "information": ":information_source:",
         "pingpong": ":ping_pong:"
     },
 
     "presence": {
-        "activity": "Remembering Technoblade",
-        "activityType": "Playing",
+        "activity": "wdh.gg/technobot",
+        "activityType": 0,
         "status": "ONLINE"
     }
 }

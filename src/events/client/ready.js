@@ -7,10 +7,10 @@ module.exports = {
 			console.log(`Logged in as: ${client.user.tag}`);
 
 			// Register Commands
-			const registerCommands = require("../../scripts/registercommands");
+			const registerCommands = require("../../scripts/register");
 			await registerCommands();
 		} catch(err) {
-			console.error(err);
+			client.logEventError(err);
 		}
 	}
 }
