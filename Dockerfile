@@ -8,7 +8,4 @@ RUN npm install
 
 COPY . .
 
-ENV port $port
-EXPOSE $port
-
 CMD ["npm", "start"]
