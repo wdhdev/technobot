@@ -1,6 +1,6 @@
 module.exports = {
     name: "invite",
-    description: "Sends the bot invite link",
+    description: "Get the bot invite link.",
     options: [],
     botPermissions: [],
     cooldown: 5,

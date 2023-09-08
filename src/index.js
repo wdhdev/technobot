@@ -15,11 +15,11 @@ const client = new Discord.Client({
     presence: {
         activities: [
             {
-                name: config.presence.activity,
-                type: config.presence.activityType,
+                name: "wdh.gg/technobot",
+                type: Discord.ActivityType.Custom
             }
         ],
-        status: config.presence.status
+        status: "online"
     }
 })
 

@@ -1,6 +1,6 @@
 module.exports = {
     name: "reddit",
-    description: "Sends a link to the r/Technoblade subreddit",
+    description: "Get a link to the Technoblade subreddit.",
     options: [],
     botPermissions: [],
     cooldown: 5,

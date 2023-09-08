@@ -2,7 +2,7 @@ const fs = require("fs");
 
 module.exports = {
     name: "help",
-    description: "Displays a list of all of my commands",
+    description: "Displays a list of all of my commands.",
     options: [
         {
             type: 3,

@@ -5,6 +5,9 @@
     },
 
     "emojis": {
+        "connection_bad": "<:connection_bad:1149583879179612250>",
+        "connection_excellent": "<:connection_excellent:1149583873538260992>",
+        "connection_good": "<:connection_good:1149583875551539280>",
         "error": ":x:",
         "pingpong": ":ping_pong:"
     },

@@ -1,6 +1,6 @@
 module.exports = {
     name: "quote",
-    description: "Sends a random Technoblade quote",
+    description: "Get a random Technoblade quote.",
     options: [],
     botPermissions: [],
     cooldown: 3,
