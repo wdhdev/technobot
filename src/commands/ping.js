@@ -38,7 +38,7 @@ module.exports = {
                     { name: "API Latency", value: apiLatencyValue, inline: true }
                 )
 
-            await interaction.reply({ embeds: [ping] });
+            await interaction.editReply({ embeds: [ping] });
         } catch(err) {
             client.logCommandError(err, interaction, Discord);
         }
