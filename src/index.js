@@ -42,7 +42,6 @@ process.on("unhandledRejection", (err) => {
 // Configs
 client.config_embeds = config.embeds;
 client.config_emojis = config.emojis;
-client.config_presence = config.presence;
 
 // Command Handlers
 client.commands = new Discord.Collection();

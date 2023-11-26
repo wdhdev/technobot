@@ -1,0 +1,14 @@
+{
+    "embeds": {
+        "default": "#E15C5C",
+        "error": "#E74C3C"
+    },
+
+    "emojis": {
+        "connection_bad": "",
+        "connection_excellent": "",
+        "connection_good": "",
+        "error": ":x:",
+        "pingpong": ":ping_pong:"
+    }
+}
