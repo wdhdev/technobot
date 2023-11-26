@@ -8,6 +8,7 @@ module.exports = (client) => {
 
     client.logCommandError = async function(err, interaction, Discord) {
         Sentry.captureException(err);
+        console.error(err);
 
         const error = new Discord.EmbedBuilder()
             .setColor(client.config_embeds.error)
