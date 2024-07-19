@@ -11,7 +11,7 @@ const config = require("./config.json");
 
 const Discord = require("discord.js");
 const client = new Discord.Client({
-    intents: 3276799,
+    intents: [],
     presence: {
         activities: [
             {
